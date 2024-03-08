@@ -8,7 +8,7 @@ to see the exit code you can activate developer mode.
 ./gameserver developer
 ```
 
-### Pass
+## Pass
 
 * **Code:** 0
 * **Description:** This code is returned when all is well.
@@ -16,7 +16,7 @@ to see the exit code you can activate developer mode.
 * **On Screen Interactive:** Complete!
 * **Logfile:** PASS
 
-### Fatal
+## Fatal
 
 * **Code:** 1
 * **Description:** Fatal errors occur when LinuxGSM is prevented from completing its task. e.g it was unable to start a server.
@@ -24,7 +24,7 @@ to see the exit code you can activate developer mode.
 * **On Screen Interactive:** Failure!
 * **Logfile:** FATAL
 
-### Error
+## Error
 
 * **Code:** 2
 * **Description:** An error occurs when LinuxGSM can complete its task however something went wrong. In many cases LinuxGSM will attempt to resolve errors itself.
@@ -32,7 +32,7 @@ to see the exit code you can activate developer mode.
 * **On Screen Interactive:** Error!
 * **Logfile:** ERROR
 
-### Warning
+## Warning
 
 * **Code:** 3
 * **Description:** Warnings happen when there is something mis-configured or not setup correctly. LinuxGSM may still work but not do as expected.
@@ -41,34 +41,34 @@ to see the exit code you can activate developer mode.
 * **On Screen Interactive:** Warning!
 * **Logfile:** WARN
 
-### Info
+## Info
 
 * **Code:** N/A
 * **Description:** Useful information about what LinuxGSM is currently doing.
-* **On Screen:** 
+* **On Screen:**
 * **On Screen Automated:** \[ INFO \]
 * **On Screen Interactive:** Information!
 * **Logfile:** INFO
 
-### How to used exit codes in code
+## How to use exit codes in code
 
-An exit code is generated when you specify a logfile message e.g __`fn_script_log_fatal`. When you want the script to exit you must use `core_exit.sh` rather than just the exit command. `core_exit.sh` will then handle the exit and specify the last know exit code. So if the more recent command was `fn_script_log_fatal`then the exit code will be 1
+An exit code is set when you use a log message like `fn_script_log_fatal`. To properly exit the script and specify the exit code, you should use `core_exit.sh` instead of just the `exit` command. `core_exit.sh` will handle the exit and set the last known exit code. For example, if the most recent command was `fn_script_log_fatal`, the exit code will be 1.
 
-#### Examples
+### Example - Exit Code 1
 
 ```text
 fn_script_log_fatal "RCON password is not set"
 core_exit.sh
 ```
 
-This will exit with code 1
+### Example - Exit Code 2
 
 ```text
 fn_script_log_error "RCON password is not set"
 core_exit.sh
 ```
 
-This will exit with code 2
+### Example - Exit Code 0
 
 ```text
 fn_script_log_error "SteamCMD is missing"
@@ -76,6 +76,3 @@ LinuxGSM installs SteamCMD
 fn_script_log_pass "SteamCMD has been installed"
 core_exit.sh
 ```
-
-This will exit with code 0
-

@@ -1,6 +1,6 @@
 # Programming Language
 
-![](../.gitbook/assets/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d617374.png)
+![BASH Logo](../.gitbook/assets/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d617374.png)
 
 LinuxGSM is written in [Bourne-Again Shell](https://en.wikipedia.org/wiki/Bash\_\(Unix\_shell\)) (BASH) Script sometimes just known as Shell Script.
 
@@ -12,7 +12,7 @@ _BASH_ is a "Unix shell": a command-line interface for interacting with the oper
 
 ## What is BASH Script?
 
-"In addition to the interactive mode, where the user types one command at a time, with immediate execution and feedback, Bash (like many other shells) also has the ability to run an entire script of commands, known as a "Bash shell script" (or "Bash script" or "shell script" or just "script"). A script might contain just a very simple list of commands — or even just a single command — or it might contain functions, loops, conditional constructs, and all the other hallmarks of imperative programming. In effect, a Bash shell script is a computer program written in the Bash programming language." -[ Bash Shell Scripting](https://en.wikibooks.org/wiki/Bash\_Shell\_Scripting#What\_is\_Bash?)
+"In addition to the interactive mode, where the user types one command at a time, with immediate execution and feedback, Bash (like many other shells) also has the ability to run an entire script of commands, known as a "Bash shell script" (or "Bash script" or "shell script" or just "script"). A script might contain just a very simple list of commands — or even just a single command — or it might contain functions, loops, conditional constructs, and all the other hallmarks of imperative programming. In effect, a Bash shell script is a computer program written in the Bash programming language." -[Bash Shell Scripting](https://en.wikibooks.org/wiki/Bash\_Shell\_Scripting#What\_is\_Bash?)
 
 ## Why Does LinuxGSM use BASH?
 

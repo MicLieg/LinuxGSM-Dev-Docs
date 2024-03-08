@@ -6,7 +6,7 @@ Adding a new game server is one of the most common things developers do. This gu
 replace gameserver with the name of the new server e.g rustserver
 {% endhint %}
 
-### Create new \_default.cfg config file
+## Create new _default.cfg config file
 
 Firstly create a new `_default.cfg` file in `lgsm/config-default/config-lgsm/gameserver` . An existing \_default.cfg file can be used as a template.
 
@@ -70,5 +70,4 @@ Not all game servers use SteamCMD. If this is the case a custom update module wi
 
 ## Custom Commands
 
-Some game servers may require bespoke commands to complete tasks. Examples of this include Teamspeak 3 and Unreal Tournament 2004. Take a look at the `core_getopts.sh` module for examples of how to add commands.
-
+Some game servers may require bespoke commands to complete tasks. Examples of this include TeamSpeak 3 and Unreal Tournament 2004. Take a look at the `core_getopts.sh` module for examples of how to add commands.

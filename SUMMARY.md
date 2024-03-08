@@ -35,7 +35,7 @@
 * [Checks](technical/checks.md)
 * [Exit](technical/exit.md)
 * [Install](technical/install.md)
-* [Debuggins](technical/debuggins.md)
+* [Debugging](technical/debugging.md)
 
 ## Code Standards
 

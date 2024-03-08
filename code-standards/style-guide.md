@@ -1,11 +1,12 @@
 # Style Guide
 
-In order to make LinuxGSM as coherent as possible, we adopted some code conventions to follow.\
+In order to make LinuxGSM as coherent as possible, we adopted some code conventions to follow.
+
 Here are some of them.
 
 ## Variables
 
-#### Naming variables
+### Naming variables
 
 Variables should be made of lowercase letters only and should be descriptive enough to understand its purpose (even if the variable is longer that preferred).
 
@@ -19,7 +20,7 @@ var="value"
 
 ### Calling variables
 
-Variable should always be called between brackets and double quotes to prevent globbing and word splitting.
+Variables should always be called between brackets and double quotes to prevent globbing and word splitting.
 
 ```bash
 echo "${var}"
@@ -27,7 +28,7 @@ echo "${var}"
 
 ### Directories
 
-Directories are called using LinuxGSM directories variables, or relative to those. Common directory variables can be found in `linuxgsm.sh` and `_default.cfg` .
+Directories are called using LinuxGSM directories variables, or relative to those. Common directory variables can be found in `linuxgsm.sh` and `_default.cfg`.
 
 Examples:
 
@@ -42,16 +43,16 @@ find "${executabledir}/bin"
 
 If statements should look like the following
 
-```
-if [ "${shortname}" == "csgo" ];then
+```bash
+if [ "${shortname}" == "csgo" ]; then
    # content
 fi
 ```
 
 if statements with multiple options like so
 
-```
-if [ "${shortname}" == "csgo" ]||[ "${shortname}" == "css" ]; then
+```bash
+if [ "${shortname}" == "csgo" ] || [ "${shortname}" == "css" ]; then
    # content
 fi
 ```
@@ -62,7 +63,7 @@ fi
 
 * The `if [ statement ]; then` should be a one-liner operation.
 * Signs comparators like `==`, `lt`, `lt` etc. are preferred to `-eq`, `-le`, `-lt`.
-* Anything within an if statement must be tabulated one step deeper.
+* Anything within an if statement must be indented one step deeper.
 
 Example:
 
@@ -74,7 +75,7 @@ fi
 
 ### Expression Standards
 
-Common if expressions LinuxGSM uses. More expressions [here](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect\_07\_01.html).
+Common if expressions LinuxGSM uses. More expressions [here](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html#tab_07_01).
 
 | Expression | Description                          |
 | ---------- | ------------------------------------ |
@@ -90,10 +91,10 @@ Common if expressions LinuxGSM uses. More expressions [here](http://tldp.org/LDP
 Do not use `! -z` or `! -n`
 {% endhint %}
 
-There is a distinct difference between -n and -v.
+#### There is a distinct difference between `-n` and `-v`
 
-\-n is used to check is a variable is set and not if it exists\
-\-v is used to check if a variable exists and not it is set
+* `-n` is used to check if a variable is set and not if it exists
+* `-v` is used to check if a variable exists and not it is set
 
 ```bash
 var="set"
@@ -109,16 +110,16 @@ if [ -z "${var}" ]; then
 fi
 ```
 
-```
+```bash
 var=""
 # OR
 var="set"
 if [ -v var ]; then
- # Variable exista
+ # Variable exists
 fi
 ```
 
-```
+```bash
 # var is missing
 if [ ! -v var ]; then
  # Variable does not exist
@@ -128,18 +129,18 @@ fi
 ## Loops
 
 * Loops should be a one liner statement.
-* Anything within a loop must be tabulated one step deeper.
+* Anything within a loop must be indented one step deeper.
 
 ```bash
 while [ "${var}" < "${cap}" ]; do
-    echo "This is tabulated"
+    echo "This is indented"
     let var=var+1
 done
 ```
 
 ## Comments
 
-As English is not always the native language of a developer, comments should use a formal writing style and be straight to the point. If unsure this short formal writing [guide](http://www2.ivcc.edu/rambo/tip\_formal\_writing\_voice.htm) will help.
+As English is not always the native language of a developer, comments should use a formal writing style and be straight to the point. If unsure this short formal writing [guide](https://facultyweb.ivcc.edu/ramboeng2/tip_formal_writing_voice.htm) will help.
 
 ```bash
 # Using comments help developers understand complex code, but should be used sparingly.
@@ -147,15 +148,16 @@ As English is not always the native language of a developer, comments should use
 
 ## Functions
 
-* Function should be named starting with `fn_` and using lowercase letters only.
+* Functions should be named starting with `fn_` and using lowercase letters only.
 * Any recurrent task should be put into a function.
-* Anything within a function must be tabulated one step deeper.
+* Anything within a function must be indented one step deeper.
 
 Example:
 
 ```bash
 fn_myfunction(){
-    echo "This is tabulated"
+    echo "This is indented"
+echo "This is not"
 }
 ```
 
@@ -166,46 +168,46 @@ fn_myfunction(){
 
 ## Automated Messages
 
-Automated messages are used with any commands that are non-interactive. Examples of this include Start, Stop and Monitor. There are various different alert messages available see [Exit-Codes](broken-reference) for details.
+Automated messages are used with any commands that are non-interactive. Examples of this include Start, Stop and Monitor. There are various different alert messages available see [Exit Codes](../technical/exit-codes.md) for details.
 
 Each automated message starts with `fn_print_dots` to show a process is happening but with no known outcome.
 
-`fn_print_dots`
+`fn_print_dots`:
 
-```
+```text
 [ .... ] Starting fctrserver:
 ```
 
 Once an outcome of a process is known the message uses an outcome message like `fn_print_ok` or `fn_print_fail`
 
-fn\_print\_ok
+`fn_print_ok`:
 
-```
+```text
 [  OK  ] Starting fctrserver: Factorio Server
 ```
 
 The option of a newline is also available by appending `_nl` for example `fn_print_ok_nl`. This will add a carriage return to the message preventing it being overwritten by the next message.
 
-```
+```text
 [  OK  ] Stopping fctrserver: Graceful: CTRL+c: 2: OK
 [ .... ] Starting fctrserver: Factorio Server
 ```
 
-#### Characteristics
+### Characteristics
 
-Interactive messages contain extra detail at the begining of the message that is pre-populated. Full stops must `not` be used with this type of message.
+Interactive messages contain extra detail at the beginning of the message that is pre-populated. Full stops must `not` be used with this type of message.
 
 ### Interactive Messages
 
-Interactive messages are used with any commands that have interactive elements. Examples of this include Install, console and debug. There are various different alert messages available see \[\[Exit-Codes]] for details.
+Interactive messages are used with any commands that have interactive elements. Examples of this include Install, console and debug. There are various different alert messages available see [Exit Codes](../technical/exit-codes.md) for details.
 
-```
+```text
 Warning! If fctrserver is already running it will be stopped.
 ```
 
-standard echo commands are normally used to supplement an alert or if an alert is not required. Bullet points can also be used
+Standard echo commands are normally used to supplement an alert or if an alert is not required. Bullet points can also be used
 
-```
+```text
 Information! Press "CTRL+b" then "d" to exit console.
 Warning! Do NOT press CTRL+c to exit.
 * https://docs.linuxgsm.com/commands/console

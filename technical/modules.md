@@ -8,11 +8,11 @@ A command will call upon modules to complete various command tasks. Modules are 
 
 Modules are located in the `modules` directory,
 
-```
+```text
 lgsm/modules
 ```
 
-### Module Groups
+## Module Groups
 
 Modules are split into logical groups depending on the type of task being carried out.
 
@@ -27,21 +27,21 @@ Modules are split into logical groups depending on the type of task being carrie
 * query – game server query modules
 * update – handles updating of game servers and LinuxGSM
 
-### Module Pointer
+## Module Pointer
 
 Some modules such as `fix.sh` and `check.sh` are made up of smaller tasks that are split up into sub-modules. Because of this, these modules become pointers for their sub-modules that will upon the sub-modules as required.
 
 An example of this is when check.sh will be called within command\_start.sh, it will automatically select which sub-module tasks are required and run them.
 
-### Core Modules
+## Core Modules
 
 Core modules handle vital are required by LinuxGSM. These include download, getopt, messages, exit, trap
 
-### Module Order
+## Module Order
 
 Modules will launch in sequence as they are required by commands. The following modules will normally run in the following order when a command is executed:
 
-```
+```text
 core
 command
 check
@@ -52,28 +52,28 @@ It is possible to see the order that modules run by enabling `./gameserver dev`.
 
 Example output of `./gameserver stop`
 
-```
-+ core_functions.sh
+```text
++ core_modules.sh
 ++ core_legacy.sh
 ++ core_messages.sh
 ++ core_dl.sh
 ++ core_trap.sh
++ check_ip.sh
+++ info_game.sh
 + core_getopt.sh
 +++ command_stop.sh
 ++++ check.sh
 +++++ check_root.sh
++++++ check_version.sh
 +++++ check_tmuxception.sh
 +++++ check_permissions.sh
 +++++ check_system_dir.sh
 +++++ check_logs.sh
-+++++ check_deps.sh
-++++++ info_distro.sh
 +++++ check_config.sh
 +++++ check_ip.sh
-++++++ info_config.sh
-++++++ info_parms.sh
+++++++ info_game.sh
 +++++ check_status.sh
-++++ info_config.sh
+++++ info_game.sh
 ++++ check_status.sh
 ++++ check_status.sh
 ++++ check_status.sh
@@ -87,9 +87,9 @@ In bash to call another bash script, the `source` command is used. However, in L
 
 To call a module simply add the name of the module file e.g `info_config.sh` and the module will be called. If a new module is being added it must be added to the list of modules in `core_functions.sh` like so.
 
-```
+```bash
 info_config.sh(){
-functionfile="${FUNCNAME}"
-fn_fetch_function
+    functionfile="${FUNCNAME}"
+    fn_fetch_function
 }
 ```

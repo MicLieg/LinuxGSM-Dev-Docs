@@ -1,10 +1,10 @@
-# Exit
-
-**core\_exit.sh**
+# Exit - core_exit.sh
 
 This script allows for the use of exit codes which will print different outputs to LinuxGSM logs. Running `core_exit.sh` defaults exitcode variable to 0 which stands for a proper exit
 
-* Normal exit: exitcode=0
-* FATAL exitcode=1
-* ERROR: exitcode=2
-* WARN: exitcode=3
+| Exit Mode | Exit Code |
+|-----------|-----------|
+| Normal    | 0         |
+| FATAL     | 1         |
+| ERROR     | 2         |
+| WARN      | 3         |

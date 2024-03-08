@@ -4,7 +4,4 @@
 
 The below flow chart highlights the basic method for getting a feature released.
 
-![](../.gitbook/assets/e241csr.jpg)
-
-
-
+![LinuxGSM Feature Flowchart](../.gitbook/assets/e241csr.jpg)

@@ -1,18 +1,24 @@
 # Checks
 
-Any script file must run `check.sh` at some point. Within `check.sh`, you will then choose what tests to run for a given function. The syntax of check.sh is a bit counter-intuitive: `local allowed_commands_array=( )` is the variable where you will enter the functions into which you need to run the following check.
+The `check.sh` script is a requirement for any script file. It allows you to choose which checks to run for a specific function. To specify the functions that require this check, you need to populate the `allowed_commands_array` variable within `check.sh` with the scripts `commandname`.
 
 There are several checks available:
 
-* check\_config.sh checks for a missing config file or a wrong parameter.
-* check\_deps.sh checks for missing dependencies and contains requirements
-* check\_glibs.sh checks if the server has the correct Glibc version or a fix available.
-* check\_ip.sh automatically identifies the server interface IP.
-* check\_logs.sh checks if log files exist.
-* check\_permissions.sh checks ownership & permissions of scripts, files and directories
-* check\_root.sh checks if the user tried to run the script as root
-* check\_status.sh checks the process status of the server. Either online or offline
-* check\_steamcmd.sh checks if SteamCMD is installed correctly
-* check\_system\_dir.sh checks if systemdir is accessible
-* check\_system\_requirements.sh checks RAM requirements (maybe more into the future)
-* check\_tmuxception.sh checks and prevents server start from tmux or screen
+| Check File                     | Description                                                              |
+|--------------------------------|--------------------------------------------------------------------------|
+| `check_config.sh`              | Checks for a missing config file or a wrong parameter.                   |
+| `check_deps.sh`                | Checks and installs missing dependencies.                                |
+| `check_executable.sh`          | Checks if server executable exists.                                      |
+| `check_gamedig.sh`             | Installs nodejs and gamedig if not installed.                            |
+| `check_glibs.sh`               | Checks if the server has the correct Glibc version.                      |
+| `check_ip.sh`                  | Automatically identifies the server interface IP.                        |
+| `check_last_update.sh`         | Checks Lockfile to see when last update happened.                        |
+| `check_logs.sh`                | Checks if log files exist.                                               |
+| `check_permissions.sh`         | Checks ownership & permissions of scripts, files and directories.        |
+| `check_root.sh`                | Checks if the user tried to run the script as root.                      |
+| `check_status.sh`              | Checks the process status of the server. Either online or offline.       |
+| `check_steamcmd.sh`            | Checks if SteamCMD is installed correctly.                               |
+| `check_system_dir.sh`          | Checks if systemdir/serverfiles is accessible.                           |
+| `check_system_requirements.sh` | Checks RAM requirements. (maybe more into the future)                    |
+| `check_tmuxception.sh`         | Checks if run from tmux or screen.                                       |
+| `check_version.sh`             | Will run update-lgsm if gameserver.sh and modules version does not match |

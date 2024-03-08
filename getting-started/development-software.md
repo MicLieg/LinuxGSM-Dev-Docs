@@ -36,7 +36,7 @@ To work on the project, edit code, and create branches a Git client is required.
 
 ## SSH Client
 
-To connect to Linux servers an SSH client is needed. There are various clients available to choose from. For Windows, MobaXterm is a great option for the classic PuTTY. For Linux and Mac Remmina works well for saving SSH sessions.
+To connect to Linux servers an SSH client is needed. There are various clients available to choose from. For Windows, MobaXterm is a great option or the classic PuTTY. For Linux and Mac Remmina works well for saving SSH sessions.
 
 * [Termius](https://termius.com/) (Cross-platform)
 * [MobaXterm](https://mobaxterm.mobatek.net/) (Windows)
@@ -50,5 +50,3 @@ The LinuxGSM project uses [Discord](https://discordapp.com) as the main method o
 ## SteamDB
 
 [SteamDB](https://steamdb.info/) is a great resource for finding data related to Steam. This can be used to look up appid's for game servers as well as checking if a game server supports Linux. For example, The Rust dedicated server is found here [https://steamdb.info/app/258550/info/](https://steamdb.info/app/258550/info/)
-
-##
