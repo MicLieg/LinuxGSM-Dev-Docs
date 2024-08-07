@@ -33,7 +33,7 @@
 -   [Game Server Querying](technical/game-server-querying.md)
 -   [Messages & Logs](technical/messages-and-logs.md)
 -   [Checks](technical/checks.md)
--   [Exit](technical/exit.md)
+-   [Exit & Exit Codes](technical/exit-codes.md)
 -   [Install](technical/install.md)
 -   [Debuggins](technical/debuggins.md)
 

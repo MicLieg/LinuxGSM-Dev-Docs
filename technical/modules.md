@@ -87,7 +87,7 @@ In bash to call another bash script, the `source` command is used. However, in L
 
 To call a module simply add the name of the module file e.g `info_config.sh` and the module will be called. If a new module is being added it must be added to the list of modules in `core_functions.sh` like so.
 
-```
+```bash
 info_config.sh(){
 functionfile="${FUNCNAME}"
 fn_fetch_function

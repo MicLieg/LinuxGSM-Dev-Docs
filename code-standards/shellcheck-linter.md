@@ -1,3 +1,3 @@
 # Shellcheck Linter
 
-\[WIP\]
+[WIP]
